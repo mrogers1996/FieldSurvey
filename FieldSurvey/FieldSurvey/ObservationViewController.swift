@@ -13,7 +13,8 @@ class ObservationViewController: UIViewController {
     @IBOutlet weak var animalIconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionText: UITextView!
+    
     
     var observation: Observations?
     var dateFormatter = DateFormatter()
@@ -28,7 +29,7 @@ class ObservationViewController: UIViewController {
         
         animalIconImageView.image = observation?.classification.image
         titleLabel.text = observation?.title
-        descriptionLabel.text = observation?.description
+        descriptionText.text = observation?.description
         
         if let date = observation?.date {
             dateLabel.text = dateFormatter.string(from: date)
